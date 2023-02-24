@@ -1,0 +1,26 @@
+{% include "pets.html" %} {% if pets %}
+<table>
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Species</th>
+        <th>YOB</th>
+        <th>Actions</th>
+    </tr>
+    {% for p in pets %}
+    <tr>
+        <td><b>{{ p.id }}</b></td>
+        <td>{{ p.name }}</td>
+        <td>{{ p.species|capfirst }}</td>
+        <td>{{ p.year_of_birth }}</td>
+        <td><a href="http://{{ request.META.HTTP_HOST }}/pets/edit/{{ p.id }}/">View/Edit</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p style="color: #f00; font-size: 32">No pets found!</p>
+{% endif %}
+
+<div>
+    <a href="http://{{ request.META.HTTP_HOST }}/pets/create/"><h5>Create New Pet</h5></a>
+</div>

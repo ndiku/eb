@@ -1,0 +1,12 @@
+{% include "pets.html" %}
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %} {{ form.as_p }}
+    <button class="form-control" action="Reset">Reset</button>
+    <button class="form-control" action="Submit">Submit</button>
+</form>
+
+<div>
+    <a href="http://{{ request.META.HTTP_HOST }}/"><h5>Back to List All Pets</h5></a>
+    <a href="http://{{ request.META.HTTP_HOST }}/pets/create/"><h5>Create New Pet</h5></a>
+</div>
+
