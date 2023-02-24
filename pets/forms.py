@@ -12,3 +12,4 @@ class PetForm(forms.ModelForm):
         "species": forms.ChoiceField(label="Species", choices=constant.OPTIONS_SPECIES, required=True),
         "year_of_birth": forms.ChoiceField(label="Year of Birth", choices=constant.OPTIONS_YEARS, required=True),
     }
+    
