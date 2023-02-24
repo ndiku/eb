@@ -134,4 +134,3 @@ dmypy.json
 env
 pets/migrations/
 */__pycache__
-db.sqlite3
